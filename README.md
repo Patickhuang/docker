@@ -154,16 +154,16 @@ docker run -d --name homebox --restart unless-stopped -p 3300:3300 p3terx/homebo
 
 ```
 安装步骤
-1 进群 找玛卡巴卡获取许可 
+* 进群 找玛卡巴卡获取许可 
 @NolanNarkbot  点击start后
 在群里使用命令菜单/narksq@NolanNarkbot获取许可 
-2 在群里发送/narksq@NolanNarkbot 获取到授权之后 改名为Nark.lic
-3 mkdir /root/Ark  
-4 cd /root/Ark && mkdir -p Config   
-5 将授权文件放入/root/Ark/Config中 
-6 将Config.json 文件放入/root/Ark/Config
-7 建立 日志文件夹  cd /root/Ark && mkdir -p logfile 
-8 cd /root/Ark 准备拉取启动容器
+* 在群里发送/narksq@NolanNarkbot 获取到授权之后 改名为Nark.lic
+* mkdir /root/Ark  
+* cd /root/Ark && mkdir -p Config   
+* 将授权文件放入/root/Ark/Config中 
+* 将Config.json 文件放入/root/Ark/Config
+* 建立 日志文件夹  cd /root/Ark && mkdir -p logfile 
+* cd /root/Ark 准备拉取启动容器
 arm需要将latest 更换为arm 即可
 sudo docker run   --name nark -p 5701:80  -d  -v  "$(pwd)"/Config:/app/Config \
 -v  "$(pwd)"/logfile:/app/logfile  \
@@ -197,3 +197,80 @@ docker run -d --name mosdns -p 5454:53/udp -p 5454:53/tcp -v /etc/mosdns:/etc/mo
 * docker-compose --version
 ```
 
+## elecv2p
+
+```
+docker run -dit \
+--restart=always \
+--name elecv2p \
+-e TZ=Asia/Shanghai \
+-p 8100:80 -p 8101:8001 -p 8102:8002 \
+-v $PWD/elecv2p/JSFile:/usr/local/app/script/JSFile \
+-v $PWD/elecv2p/Store:/usr/local/app/script/Store \
+-v $PWD/elecv2p/rootCA:/usr/local/app/rootCA \
+-v $PWD/elecv2p/Lists:/usr/local/app/script/Lists \
+-v $PWD/elecv2p/Shell:/usr/local/app/script/Shell \
+-v $PWD/elecv2p/efss:/usr/local/app/efss \
+-e ENABLE_HANGUP=true \
+-e ENABLE_WEB_PANEL=true \
+--hostname elecv2p \
+elecv2/elecv2p:latest
+
+docker run -dit \
+--restart=always \
+--name elecv2p1 \
+-e TZ=Asia/Shanghai \
+-p 8300:80 -p 8301:8001 -p 8302:8002 \
+-v $PWD/elecv2p1/JSFile:/usr/local/app/script/JSFile \
+-v $PWD/elecv2p1/Store:/usr/local/app/script/Store \
+-v $PWD/elecv2p1/rootCA:/usr/local/app/rootCA \
+-v $PWD/elecv2p1/Lists:/usr/local/app/script/Lists \
+-v $PWD/elecv2p1/Shell:/usr/local/app/script/Shell \
+-v $PWD/elecv2p1/efss:/usr/local/app/efss \
+-e ENABLE_HANGUP=true \
+-e ENABLE_WEB_PANEL=true \
+--hostname elecv2p1 \
+elecv2/elecv2p:latest
+
+docker run -dit \
+--restart=always \
+--name elecv2p2 \
+-e TZ=Asia/Shanghai \
+-p 8400:80 -p 8401:8001 -p 8402:8002 \
+-v $PWD/elecv2p2/JSFile:/usr/local/app/script/JSFile \
+-v $PWD/elecv2p2/Store:/usr/local/app/script/Store \
+-v $PWD/elecv2p2/rootCA:/usr/local/app/rootCA \
+-v $PWD/elecv2p2/Lists:/usr/local/app/script/Lists \
+-v $PWD/elecv2p2/Shell:/usr/local/app/script/Shell \
+-v $PWD/elecv2p2/efss:/usr/local/app/efss \
+-e ENABLE_HANGUP=true \
+-e ENABLE_WEB_PANEL=true \
+--hostname elecv2p2 \
+elecv2/elecv2p:latest
+
+docker run -dit \
+--restart=always \
+--name elecv2p3 \
+-e TZ=Asia/Shanghai \
+-p 8500:80 -p 8501:8001 -p 8502:8002 \
+-v $PWD/elecv2p3/JSFile:/usr/local/app/script/JSFile \
+-v $PWD/elecv2p3/Store:/usr/local/app/script/Store \
+-v $PWD/elecv2p3/rootCA:/usr/local/app/rootCA \
+-v $PWD/elecv2p3/Lists:/usr/local/app/script/Lists \
+-v $PWD/elecv2p3/Shell:/usr/local/app/script/Shell \
+-v $PWD/elecv2p3/efss:/usr/local/app/efss \
+-e ENABLE_HANGUP=true \
+-e ENABLE_WEB_PANEL=true \
+--hostname elecv2p3 \
+elecv2/elecv2p:latest
+```
+
+## gocq
+
+```
+* docker run --rm -it --name="gocq" -v $PWD/go-cqhttp:/data xzsk2/gocqhttp-docker:latest
+
+* docker run -d -it --name="gocq" -v $PWD/go-cqhttp:/data jyishit/go-cqhttp:latest
+
+* 更换镜像：jyishit/go-cqhttp:latest
+```
