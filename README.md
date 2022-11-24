@@ -181,22 +181,6 @@ docker run --rm     -v /var/run/docker.sock:/var/run/docker.sock     containrrr/
 docker run -d --name mosdns -p 5454:53/udp -p 5454:53/tcp -v /etc/mosdns:/etc/mosdns irinesistiana/mosdns:latest
 ```
 
-## Docker安装nginx proxy manager
-
-```
-#国外鸡
-* sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-
-#国内鸡
-* sudo curl -L https://get.daocloud.io/docker/compose/releases/download/1.25.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-
-#添加可执行权限
-* sudo chmod +x /usr/local/bin/docker-compose
-
-#测试安装结果
-* docker-compose --version
-```
-
 ## elecv2p
 
 ```
