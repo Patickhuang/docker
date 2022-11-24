@@ -258,3 +258,88 @@ elecv2/elecv2p:latest
 
 * 更换镜像：jyishit/go-cqhttp:latest
 ```
+
+## docker-compose
+
+## 安装docker-compose
+
+```
+#国外鸡
+* sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+#国内鸡
+* sudo curl -L https://get.daocloud.io/docker/compose/releases/download/1.25.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+#添加可执行权限
+* sudo chmod +x /usr/local/bin/docker-compose
+#测试安装结果
+* docker-compose --version
+```
+## Clash-mosdns
+```
+version: "3"
+services:
+  clash:
+    image: dsmmyq/docker-clash
+    volumes:
+      - /root/clash:/clash_config
+    restart: unless-stopped
+    privileged: true
+    networks:
+      vlan:
+        ipv4_address: 192.168.1.10
+    container_name: clash
+  clash1:
+    image: metacubex/clash-meta:latest
+    volumes:
+      - /root/clash1:/root/.config/clash
+    restart: unless-stopped
+    privileged: true
+    networks: 
+      vlan:
+        ipv4_address: 192.168.1.18
+    container_name: clash 
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./portainer-data:/data
+    ports:
+      - 9000:9000    
+networks:
+  vlan:
+    driver: macvlan
+    driver_opts:
+      parent: eth0 # 要桥接的网卡
+    ipam:
+      driver: default
+      config:
+        - subnet: "192.168.1.0/24" # 改成你的局域网的CIDR地址块
+          gateway: 192.168.1.1 # 改成你的网关
+```
+## Nginx Proxy Manage
+```
+* 在主机新建一个文件夹
+* 在文件夹内新建 docker-compose.yml 文件，填入以下代码
+version: '3'
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+ * cd到文件所在位置，执行：docker-compose up -d
+* 进入nginx proxy manager后台
+* 后台地址：ip：81
+* 初始账号密码
+Email:    admin@example.com
+Password: changeme
+```
