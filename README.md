@@ -37,7 +37,7 @@ docker run -dit \
 whyour/qinglong:latest
 ```
 ```
-##自动更新watchtower
+## 自动更新watchtower
 运行一次即退出版
 sudo docker create \
 --name watchtower_dev_run_once \
