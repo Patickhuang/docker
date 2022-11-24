@@ -35,6 +35,8 @@ docker run -dit \
 --hostname wskey \
 --restart always \
 whyour/qinglong:latest
+
+* 自定义版本：whyour/qinglong:2.13.8
 ```
 
 ## 机器人菜单
