@@ -405,8 +405,9 @@ touch autMan.cache && docker run -dit \
 ilvyu/autman:arm64
 ```
 
+
+## 方式2: 本机拉取1.8.7代码解压并移动到该目录下(可以看到autman执行文件)  执行下面命令   好处 全挂载 后续升级可以在外面替换主程序完成升级  未测试 
 ```
-方式2: 本机拉取1.8.7代码解压并移动到该目录下(可以看到autman执行文件)  执行下面命令   好处 全挂载 后续升级可以在外面替换主程序完成升级  未测试 
 docker run -dit \
 -p 8022:8080 \
 -v $PWD:/app \
@@ -415,6 +416,7 @@ docker run -dit \
 --restart always \
 ilvyu/autman:1.8.7
 ```
+
 ```
 docker run -dit \
 -p 8080:8080 \
