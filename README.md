@@ -13,7 +13,9 @@ docker run -dit \
 --hostname qinglong \
 --restart always \
 whyour/qinglong:latest
+```
 
+```
 docker run -dit \
 -v $PWD/ql2:/ql/data \
 -v $PWD/ql2/jbot:/ql/data/jbot \
@@ -24,7 +26,9 @@ docker run -dit \
 --hostname ql \
 --restart always \
 whyour/qinglong:latest
+```
 
+```
 docker run -dit \
 -v $PWD/ql3:/ql/data \
 -v $PWD/ql3/jbot:/ql/data/jbot \
@@ -35,6 +39,7 @@ docker run -dit \
 --hostname wskey \
 --restart always \
 whyour/qinglong:latest
+```
 
 * 自定义版本：whyour/qinglong:2.13.8
 ```
@@ -71,7 +76,9 @@ sudo docker create \
 -e TZ=Asia/Shanghai \
 -v /var/run/docker.sock:/var/run/docker.sock \
 containrrr/watchtower:latest-dev --cleanup --run-once
+```
 
+```
 后台长期运行版
 docker run -d \
 --name watchtower_dev \
@@ -82,7 +89,9 @@ docker run -d \
 -v /var/run/docker.sock:/var/run/docker.sock \
 -s "* 0 * * * *" \
 containrrr/watchtower:latest-dev --cleanup
+```
 
+```
 docker run -d \
    --name watchtower-dev \
   -e TZ=Asia/Shanghai \
@@ -94,7 +103,9 @@ docker run -d \
      containrrr/watchtower:latest  -c\
   -s "* 0 * * * *" \
 $(cat ~/.watchtower.list)
+```
 
+```
 docker run -d \
    --name watchtower-dev \
   -e TZ=Asia/Shanghai \
@@ -105,7 +116,9 @@ docker run -d \
      containrrr/watchtower:latest  -c\
   -s "* */30 * * * *" \
 $(cat ~/.watchtower.list)
+```
 
+```
 docker run -d \
    --name watchtower-dev \
   -e TZ=Asia/Shanghai \
@@ -117,7 +130,9 @@ docker run -d \
     containrrr/watchtower:latest-dev  -c\
   -s "* */30 * * * *" \
 $(cat ~/.watchtower.list)
+```
 
+```
 docker run -d \
    --name watchtower-dev \
   -e TZ=Asia/Shanghai \
@@ -201,7 +216,9 @@ docker run -dit \
 -e ENABLE_WEB_PANEL=true \
 --hostname elecv2p \
 elecv2/elecv2p:latest
+```
 
+```
 docker run -dit \
 --restart=always \
 --name elecv2p1 \
@@ -217,7 +234,9 @@ docker run -dit \
 -e ENABLE_WEB_PANEL=true \
 --hostname elecv2p1 \
 elecv2/elecv2p:latest
+```
 
+```
 docker run -dit \
 --restart=always \
 --name elecv2p2 \
@@ -233,7 +252,9 @@ docker run -dit \
 -e ENABLE_WEB_PANEL=true \
 --hostname elecv2p2 \
 elecv2/elecv2p:latest
+```
 
+```
 docker run -dit \
 --restart=always \
 --name elecv2p3 \
