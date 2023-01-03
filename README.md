@@ -371,8 +371,9 @@ Password: changeme
 -p  autman端口   外部端口:docker内部端口写死
 -v  挂载目录  本地目录:docker内部目录
 ```
+
+## 方式1:挂载需要的部分 有点繁琐 下面是例子
 ```
-方式1:挂载需要的部分 有点繁琐 下面是例子
 touch autMan.cache && docker run -dit \
 -p 8080:8080 \
 --mount type=bind,src=/root/autMan/autMan.cache,dst=/app/autMan.cache \
@@ -387,7 +388,6 @@ touch autMan.cache && docker run -dit \
 --restart always \
 ilvyu/autman:1.8.7
 ```
-
 ```
 touch autMan.cache && docker run -dit \
 -p 8080:8080 \
@@ -404,9 +404,8 @@ touch autMan.cache && docker run -dit \
 --restart always \
 ilvyu/autman:arm64
 ```
-
-
-## 方式2: 本机拉取1.8.7代码解压并移动到该目录下(可以看到autman执行文件)  执行下面命令   好处 全挂载 后续升级可以在外面替换主程序完成升级  未测试 
+## 方式2
+本机拉取1.8.7代码解压并移动到该目录下(可以看到autman执行文件)  执行下面命令   好处 全挂载 后续升级可以在外面替换主程序完成升级  未测试 
 ```
 docker run -dit \
 -p 8022:8080 \
@@ -416,7 +415,6 @@ docker run -dit \
 --restart always \
 ilvyu/autman:1.8.7
 ```
-
 ```
 docker run -dit \
 -p 8080:8080 \
@@ -425,4 +423,3 @@ docker run -dit \
 --hostname autman \
 --restart always \
 ilvyu/autman:arm64
-```
