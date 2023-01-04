@@ -423,3 +423,7 @@ docker run -dit \
 --hostname autman \
 --restart always \
 ilvyu/autman:arm64
+
+## 奥特曼自启动
+```
+docker update --restart unless-stopped autman
