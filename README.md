@@ -343,9 +343,6 @@ networks:
         - subnet: "192.168.1.0/24" # 改成你的局域网的CIDR地址块
           gateway: 192.168.1.1 # 改成你的网关
           
-```
-docker-compose up -d
-```
 ## Nginx Proxy Manage
 ```
 * 在主机新建一个文件夹
@@ -426,3 +423,22 @@ docker run -dit \
 --hostname autman \
 --restart always \
 ilvyu/autman:arm64
+
+## 方式3:docker-compose
+/root/autMan为本地路径
+
+```
+version: '3'
+services:
+  autman:
+    image: shineleevip/autman:latest
+    container_name: autman
+    network_mode: bridge
+    hostname: autman
+    tty: true
+    restart: always
+    ports:
+      - '8080:8080'
+    volumes:
+      - /root/autMan:/app
+
