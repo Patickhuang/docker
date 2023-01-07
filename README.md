@@ -342,6 +342,9 @@ networks:
       config:
         - subnet: "192.168.1.0/24" # 改成你的局域网的CIDR地址块
           gateway: 192.168.1.1 # 改成你的网关
+          
+```
+docker-compose up -d
 ```
 ## Nginx Proxy Manage
 ```
