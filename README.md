@@ -424,6 +424,7 @@ docker run -dit \
 --restart always \
 ilvyu/autman:arm64
 ```
+```
 ## 方式3:docker-compose
 /root/autMan为本地路径
 
