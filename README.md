@@ -389,6 +389,7 @@ touch autMan.cache && docker run -dit \
 --restart always \
 ilvyu/autman:1.8.7
 ```
+```
 touch autMan.cache && docker run -dit \
 -p 8080:8080 \
 --mount type=bind,src=/root/autMan/autMan.cache,dst=/app/autMan.cache \
