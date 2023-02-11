@@ -417,6 +417,7 @@ docker run -dit \
 --restart always \
 ilvyu/autman:1.8.7
 ```
+```
 docker run -dit \
 -p 8080:8080 \
 -v /root/autMan:/app \
