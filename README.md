@@ -441,6 +441,7 @@ services:
       - '8080:8080'
     volumes:
       - /root/autMan:/app
-
+```
 ## 自动抓wskey到机器人
+```
 docker run -itd -v /root/wskey:/run/data -p 7878:8080 mzzsfy/proxy-support
