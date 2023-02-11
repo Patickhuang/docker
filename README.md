@@ -367,7 +367,7 @@ Email:    admin@example.com
 Password: changeme
 ```
 ## 奥特曼
-
+```
 -p  autman端口   外部端口:docker内部端口写死
 -v  挂载目录  本地目录:docker内部目录
 ```
