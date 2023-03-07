@@ -277,7 +277,7 @@ elecv2/elecv2p:latest
 ```
 * docker run --rm -it --name="gocq" -v $PWD/go-cqhttp:/data xzsk2/gocqhttp-docker:latest
 
-* docker run -d -it --name="gocq" -v $PWD/go-cqhttp:/data jyishit/go-cqhttp:latest
+* docker run -d -it --name="gocq" -v $PWD/go-cqhttp:/data yanxsir/go-cqhttp:latest
 
 * 更换镜像：jyishit/go-cqhttp:latest
 ```
