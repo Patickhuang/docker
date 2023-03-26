@@ -192,6 +192,36 @@ sudo docker run   --name ark -p 5702:80  -d  -v  /opt/Ark/Config:/app/Config \
 更新
 docker run --rm     -v /var/run/docker.sock:/var/run/docker.sock     containrrr/watchtower -c     --run-once     nark
 ```
+## Pro部署教程
+```
+1 找 @NolanNarkbot  点击start
+2 群里发送 /check@NolanNarkbot  再找 @NolanNarkbot           获取ProId
+3 群里发送 pro签到          获取wskey使用次数（因为是内测阶段28号之前有效）
+4 mkdir /root/pro        创建映射文件夹
+5 cd /root/pro              进入文件夹
+6 sudo docker run -id \
+--name pro -p 5016:5016 \
+-v "$(pwd)":/app/Data \
+-e Prolic=第2步获取的 \
+-e User=自定义管理帐号 \
+-e Pwd=自定义管理密码(八位以上包含大小写字母、数字或特殊字符) \
+--privileged=true \
+nolanhzy/pro                                     
+创建容器
+6 进入 IP:5016               回车查看面板是否正常
+7 进入 IP:5016/#/admin  进入管理界面
+
+注：修改密码可以改文件夹中的Config.json 不是改密码 还代理的话 建议使用后台全局配置去改 如果密码错了10 admin就会等半个小时  不想等直接docker restart pro
+28号以前群里发送pro签到 内测 一共20次wskey 用完可以再次签到
+每个人一共20次wskey
+没用完每天不会重置，要把20次用完群里发 pro签到 才会重置20次
+第一次部署的必须发送 pro签到 才能部署找玛卡巴卡获取proid
+```
+推送：
+https://wxpusher.zjiecode.com/admin/main/wxuser/list
+
+回调地址  http://外网pro地址/api/wxpusher
+
 ## mosdns
 
 ```
