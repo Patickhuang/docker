@@ -216,12 +216,12 @@ nolanhzy/pro
 每个人一共20次wskey
 没用完每天不会重置，要把20次用完群里发 pro签到 才会重置20次
 第一次部署的必须发送 pro签到 才能部署找玛卡巴卡获取proid
-```
+
 推送：
 https://wxpusher.zjiecode.com/admin/main/wxuser/list
 
 回调地址  http://外网pro地址/api/wxpusher
-
+```
 ## mosdns
 
 ```
