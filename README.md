@@ -477,3 +477,20 @@ services:
 ## 自动抓wskey到机器人
 ```
 docker run -itd -v /root/wskey:/run/data -p 7878:8080 mzzsfy/proxy-support
+
+## Frps/Frpc
+```
+docker run  -d \
+--restart=always \
+--network host \
+-v /etc/frp/frps.ini:/etc/frp/frps.ini \
+--name frps snowdreamtech/frps
+```
+```
+docker run \
+    --restart=always \
+    --network host -d \
+    -v /etc/frp/frpc.ini:/etc/frp/frpc.ini \
+    --name frpc \
+    snowdreamtech/frpc
+```
