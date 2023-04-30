@@ -477,7 +477,7 @@ services:
 ## 自动抓wskey到机器人
 ```
 docker run -itd -v /root/wskey:/run/data -p 7878:8080 mzzsfy/proxy-support
-
+```
 ## Frps/Frpc
 ```
 docker run  -d \
