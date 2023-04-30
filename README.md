@@ -480,6 +480,9 @@ docker run -itd -v /root/wskey:/run/data -p 7878:8080 mzzsfy/proxy-support
 ```
 ## Frps/Frpc
 ```
+下载：https://github.com/fatedier/frp
+```
+```
 docker run  -d \
 --restart=always \
 --network host \
