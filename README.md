@@ -479,7 +479,7 @@ services:
 docker run -itd -v /root/wskey:/run/data -p 7878:8080 mzzsfy/proxy-support
 ```
 ## Frps/Frpc
-##教程
+##教程：
 ```
 https://zhuanlan.zhihu.com/p/579430608
 ```
