@@ -358,6 +358,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 ```
 docker-compose --version
 ```
+```
 ## Clash-mosdns
 ```
 version: "3"
@@ -405,7 +406,7 @@ networks:
         - subnet: "192.168.1.0/24" # 改成你的局域网的CIDR地址块
           gateway: 192.168.1.1 # 改成你的网关
 ```
-```       
+      
 ## Nginx Proxy Manage
 ```
 * 在主机新建一个文件夹
