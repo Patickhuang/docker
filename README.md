@@ -318,11 +318,12 @@ elecv2/elecv2p:latest
 ## gocq
 
 ```
-* docker run --rm -it --name="gocq" -v $PWD/go-cqhttp:/data xzsk2/gocqhttp-docker:latest
-
-* docker run -d -it --name="gocq" -v $PWD/go-cqhttp:/data yanxsir/go-cqhttp:latest
-
-* 更换镜像：jyishit/go-cqhttp:latest
+docker run --rm -it --name="gocq" -v $PWD/go-cqhttp:/data xzsk2/gocqhttp-docker:latest
+```
+```
+docker run -d -it --name="gocq" -v $PWD/go-cqhttp:/data yanxsir/go-cqhttp:latest
+```
+更换镜像：jyishit/go-cqhttp:latest
 ```
 
 ## docker-compose
@@ -418,6 +419,8 @@ services:
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
+```
+```
  * cd到文件所在位置，执行：docker-compose up -d
 * 进入nginx proxy manager后台
 * 后台地址：ip：81
