@@ -81,7 +81,8 @@ nginx -c /etc/nginx/nginx.conf
 ## 自动更新watchtower
 
 ```
-运行一次即退出版
+#运行一次即退出版
+```
 sudo docker create \
 --name watchtower_dev_run_once \
 -e TZ=Asia/Shanghai \
@@ -90,7 +91,8 @@ containrrr/watchtower:latest-dev --cleanup --run-once
 ```
 
 ```
-后台长期运行版
+#后台长期运行版
+```
 docker run -d \
 --name watchtower_dev \
 --restart=always \
@@ -519,7 +521,7 @@ snowdreamtech/frpc
 ```
 curl https://rclone.org/install.sh | sudo bash
 ```
-Rclone连接OneDrive获取token，Windows电脑上下载Rclone，然后解压，使用cmd进入解压后的文件夹输入命令
+#Rclone连接OneDrive获取token，Windows电脑上下载Rclone，然后解压，使用cmd进入解压后的文件夹输入命令
 ```
 https://rclone.org/downloads/
 ```
