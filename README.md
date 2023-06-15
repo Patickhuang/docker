@@ -51,9 +51,7 @@ docker run -dit \
 --restart always \
 whyour/qinglong:latest
 ```
-
-* 自定义版本：whyour/qinglong:2.13.8
-
+自定义版本：whyour/qinglong:2.13.8
 
 ## 机器人菜单
 ```
@@ -81,7 +79,7 @@ nginx -c /etc/nginx/nginx.conf
 ## 自动更新watchtower
 
 ```
-#运行一次即退出版
+运行一次即退出版
 ```
 sudo docker create \
 --name watchtower_dev_run_once \
@@ -91,7 +89,7 @@ containrrr/watchtower:latest-dev --cleanup --run-once
 ```
 
 ```
-#后台长期运行版
+后台长期运行版
 ```
 docker run -d \
 --name watchtower_dev \
@@ -517,18 +515,18 @@ snowdreamtech/frpc
 ```
 
 ## linux上使用rclone挂载onedrive或googledrive并设置开机自启
-#安装Rclone一键脚本
+安装Rclone一键脚本
 ```
 curl https://rclone.org/install.sh | sudo bash
 ```
-#Rclone连接OneDrive获取token，Windows电脑上下载Rclone，然后解压，使用cmd进入解压后的文件夹输入命令
+Rclone连接OneDrive获取token，Windows电脑上下载Rclone，然后解压，使用cmd进入解压后的文件夹输入命令
 ```
 https://rclone.org/downloads/
 ```
 ```
 rclone.exe authorize "onedrive"
 ```
-#MacOS电脑上下载Rclone安装，下载地址:
+MacOS电脑上下载Rclone安装，下载地址:
 ```
 https://rclone.org/downloads/
 ```
@@ -539,8 +537,9 @@ rclone authorize "onedrive"
 https://raw.githubusercontent.com/Patickhuang/Public/main/onedrive.png
 ```
 ```
-#配置 Rclone,输入 rclone config 命令，会出现以下信息，参照下面的注释进行操作。
-#TIPS: 因为 RCLONE 会时不时进行更新，当你看到这篇教程时菜单选项可能已经发生了略微的改动，但大致思路不会变，不要无脑照搬操作。
+配置 Rclone,输入 rclone config 命令，会出现以下信息，参照下面的注释进行操作。
+TIPS: 因为 RCLONE 会时不时进行更新，当你看到这篇教程时菜单选项可能已经发生了略微的改动，但大致思路不会变，不要无脑照搬操作。
+```
 e) Edit existing remote
 n) New remote
 d) Delete remote
