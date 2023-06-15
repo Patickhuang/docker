@@ -566,6 +566,8 @@ s) Set configuration password
 q) Quit config
 e/n/d/r/c/s/q> n  # 选择n，新建
 name> P3TERX   # 输入名称，类似于标签，用于区分不同的网盘。
+```
+```
 Type of storage to configure.
 Enter a string value.Press Enter for the default .
 Choose a number from below, or type in your own value
@@ -622,8 +624,10 @@ Choose a number from below, or type in your own value
 26 / http Connection
    \ "http"
 Storage> 18  # 选择18，Microsoft OneDrive
+```
 ** See help for onedrive backend at: https://rclone.org/onedrive/ **
-
+```
+```
 Microsoft App Client Id
 Leave blank normally.
 Enter a string value.Press Enter for the default .
@@ -636,6 +640,8 @@ Edit advanced config?(y/n)
 y) Yes
 n) No
 y/n> n  # 选n
+```
+```
 Remote config
 Use auto config?
  * Say Y if not sure
@@ -643,6 +649,8 @@ Use auto config?
 y) Yes
 n) No
 y/n> n  # 选n
+```
+```
 For this to work, you will need rclone available on a machine that has a web browser available.
 Execute the following on your machine:
     rclone authorize "onedrive"
@@ -661,6 +669,8 @@ Choose a number from below, or type in an existing value
  5 / Search a Sharepoint site
    \ "search"
 Your choice> 1  # 这里问你要选择的类型，选1
+```
+```
 Found 1 drives, please select the one you want to use:
 0: OneDrive (business)
 Chose drive to use:> 0  # 程序找到网盘，这里编号是0，就选择0
@@ -669,7 +679,8 @@ Is that okay?
 y) Yes
 n) No
 y/n> y  # 选y
---------------------
+```
+```
 [P3TERX]
 type = onedrive
 token = {"XXXXXXXX"}
@@ -680,8 +691,9 @@ y) Yes this is OK
 e) Edit this remote
 d) Delete this remote
 y/e/d> y  # 选y
+```
+```
 Current remotes:
-
 Name                 Type
 ====                 ====
 P3TERX               onedrive
