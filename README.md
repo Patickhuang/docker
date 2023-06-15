@@ -79,7 +79,7 @@ nginx -c /etc/nginx/nginx.conf
 ## 自动更新watchtower
 
 ```
-运行一次即退出版
+##运行一次即退出版
 ```
 ```
 sudo docker create \
@@ -90,7 +90,8 @@ containrrr/watchtower:latest-dev --cleanup --run-once
 ```
 
 ```
-后台长期运行版
+##后台长期运行版
+```
 ```
 docker run -d \
 --name watchtower_dev \
