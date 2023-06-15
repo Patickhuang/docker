@@ -552,6 +552,7 @@ rclone authorize "onedrive"
 ```
 配置 Rclone,输入 rclone config 命令，会出现以下教程，参照下面的注释进行操作。
 TIPS: 因为 RCLONE 会时不时进行更新，当你看到这篇教程时菜单选项可能已经发生了略微的改动，但大致思路不会变，不要无脑照搬操作。
+```
 #教程1
 ```
 https://p3terx.com/archives/rclone-installation-and-configuration-tutorial.html
