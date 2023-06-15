@@ -328,7 +328,6 @@ docker run --rm -it --name="gocq" -v $PWD/go-cqhttp:/data xzsk2/gocqhttp-docker:
 docker run -d -it --name="gocq" -v $PWD/go-cqhttp:/data yanxsir/go-cqhttp:latest
 ```
 更换镜像：jyishit/go-cqhttp:latest
-```
 
 ## 安装docker-compose
 
