@@ -433,65 +433,21 @@ Password: changeme
 
 ## 方式1:挂载需要的部分 有点繁琐 下面是例子
 ```
-touch autMan.cache && docker run -dit \
--p 8080:8080 \
---mount type=bind,src=/root/autMan/autMan.cache,dst=/app/autMan.cache \
--v /root/autMan/assets:/app/assets \
--v /root/autMan/develop:/app/develop \
--v /root/autMan/logFile:/app/logFile \
--v /root/autMan/logs:/app/logs \
--v /root/autMan/view:/app/view \
--v /root/autMan/conf:/app/conf \
---name autman \
---hostname autman \
---restart always \
-ilvyu/autman:1.8.7
-```
-```
-touch autMan.cache && docker run -dit \
--p 8080:8080 \
---mount type=bind,src=/root/autMan/autMan.cache,dst=/app/autMan.cache \
--v /root/autMan/assets:/app/assets \
--v /root/autMan/develop:/app/develop \
--v /root/autMan/logFiles:/app/logFiles \
--v /root/autMan/logs:/app/logs \
--v /root/autMan/views:/app/views \
--v /root/autMan/conf:/app/conf \
--v /root/autMan/plugin:/app/plugin \
---name autman \
---hostname autman \
---restart always \
-ilvyu/autman:arm64
+docker run -d --name autman --restart always -p 9999:8080 -v /root/autman:/autMan hdbjlizhe/autman:latest
 ```
 
-## 方式2
-本机拉取1.8.7代码解压并移动到该目录下(可以看到autman执行文件)  执行下面命令   好处 全挂载 后续升级可以在外面替换主程序完成升级  未测试 
+##【群晖docker命令】建议在volume1下新建autman文件夹
 ```
-docker run -dit \
--p 8022:8080 \
--v $PWD:/app \
---name autman \
---hostname autman \
---restart always \
-ilvyu/autman:1.8.7
+docker run -d --name autman --restart always -p 9999:8080 -v /volume1/autman:/autMan hdbjlizhe/autman:latest
 ```
-```
-docker run -dit \
--p 8080:8080 \
--v /root/autMan:/app \
---name autman \
---hostname autman \
---restart always \
-ilvyu/autman:arm64
-```
-## 方式3:docker-compose
+## 方式2:docker-compose
 /root/autMan为本地路径
 
 ```
 version: '3'
 services:
   autman:
-    image: shineleevip/autman:latest
+    image: hdbjlizhe/autman:latest
     container_name: autman
     network_mode: bridge
     hostname: autman
@@ -500,7 +456,7 @@ services:
     ports:
       - '8080:8080'
     volumes:
-      - /root/autMan:/app
+      - /root/autMan:/autMan
 ```
 ## 自动抓wskey到机器人
 ```
