@@ -7,11 +7,11 @@ docker run -d \
 --restart always \
 -v /root/freenom:/conf \
 -v /root/freenom/logs:/app/logs \
--e RUN_AT="15 */3 * * *" \
+-e RUN_AT="0 12 * * *" \
 luolongfei/freenom
 ```
 ```
-docker run -d --name freenom --restart always -v $(pwd):/conf -v $(pwd)/logs:/app/logs -e RUN_AT="15 */3 * * *" \ luolongfei/freenom
+docker run -d --name freenom --restart always -v $(pwd):/conf -v $(pwd)/logs:/app/logs -e RUN_AT="0 12 * * *" \ luolongfei/freenom
 ```
 
 ## Portainer CE安装
