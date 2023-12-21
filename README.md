@@ -490,7 +490,7 @@ docker run  -d \
 --restart=always \
 --network host \
 -v /etc/frp/frps.ini:/etc/frp/frps.ini \
---name frps snowdreamtech/frps
+--name frps snowdreamtech/frps:0.48.0
 ```
 ```
 docker run \
@@ -498,7 +498,7 @@ docker run \
 --network host -d \
 -v /etc/frp/frpc.ini:/etc/frp/frpc.ini \
 --name frpc \
-snowdreamtech/frpc
+snowdreamtech/frpc:0.48.0
 ```
 
 ## linux上使用rclone挂载onedrive或googledrive并设置开机自启
