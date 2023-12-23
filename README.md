@@ -485,7 +485,15 @@ https://dusays.com/636/
 ```
 https://github.com/fatedier/frp
 ```
-
+## golang(go)一键安装
+安装/更新最新版golang
+```
+source <(curl -L https://go-install.netlify.app/install.sh)
+```
+查看安装的版本
+```
+go version
+```
 ## frps安装
 ```
 docker run  -d \
