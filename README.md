@@ -504,8 +504,8 @@ auth.method = "token"
 auth.token = "12345678"
 webServer.addr = "0.0.0.0"
 webServer.port = 6443
-webServer.user = "PatrickHuang"
-webServer.password = "19880108.."
+webServer.user = "面板账号"
+webServer.password = "面板密码"
 ```
 ## frpc安装
 ```
@@ -520,7 +520,7 @@ docker run -d \
 [[proxies]]
 name = "web01"
 type = "http"
-localIP = "127.0.0.1"
+localIP = "内网 IP"
 localPort = 5700
 remotePort = 80
 customDomains = ["域名"]
@@ -528,7 +528,7 @@ customDomains = ["域名"]
 [[proxies]]
 name = "web02"
 type = "http"
-localIP = "127.0.0..1"
+localIP = "内网 IP"
 localPort = 9000
 remotePort = 80
 customDomains = ["域名"]
@@ -536,7 +536,7 @@ customDomains = ["域名"]
 [[proxies]]
 name = "web1"
 type = "https"
-localIP = "127.0.0.1"
+localIP = "内网 IP"
 localPort = 8006
 remotePort = 5001
 customDomains = [" 域名"]
