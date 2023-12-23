@@ -485,7 +485,7 @@ https://dusays.com/636/
 ```
 https://github.com/fatedier/frp
 ```
-## golang(go)一键安装
+## frps 环境golang(go)一键安装
 安装/更新最新版golang
 ```
 source <(curl -L https://go-install.netlify.app/install.sh)
