@@ -492,7 +492,7 @@ docker run  -d \
 -v /etc/frp/frps.toml:/etc/frp/frps.toml \
 --name frps snowdreamtech/frps
 ```
-##frps配置
+## frps配置
 ```
 bindAddr = "0.0.0.0"
 bindPort = 5443
@@ -512,7 +512,7 @@ docker run -d \
 -v /etc/frp/frpc.toml:/etc/frp/frpc.toml \
 --name frpc snowdreamtech/frpc
 ```
-##frpc配置
+## frpc配置
 ```
 [[proxies]]
 name = "web01"
