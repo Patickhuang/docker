@@ -479,12 +479,14 @@ docker run -itd -v /root/wskey:/run/data -p 7878:8080 mzzsfy/proxy-support
 ## Frps/Frpc
 教程：
 ```
-https://zhuanlan.zhihu.com/p/579430608
+https://dusays.com/636/
 ```
 下载地址：
 ```
 https://github.com/fatedier/frp
 ```
+
+## frps安装
 ```
 docker run  -d \
 --restart=always \
@@ -505,6 +507,7 @@ webServer.port = 6443
 webServer.user = "PatrickHuang"
 webServer.password = "19880108.."
 ```
+## frpc安装
 ```
 docker run -d \
 --restart=always \
