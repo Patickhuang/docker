@@ -489,16 +489,54 @@ https://github.com/fatedier/frp
 docker run  -d \
 --restart=always \
 --network host \
--v /etc/frp/frps.ini:/etc/frp/frps.ini \
---name frps snowdreamtech/frps:0.48.0
+-v /etc/frp/frps.toml:/etc/frp/frps.toml \
+--name frps snowdreamtech/frps
+```
+##frps配置
+```
+bindAddr = "0.0.0.0"
+bindPort = 5443
+vhostHTTPPort = 80
+vhostHTTPSPort = 5001
+auth.method = "token"
+auth.token = "12345678"
+webServer.addr = "0.0.0.0"
+webServer.port = 6443
+webServer.user = "PatrickHuang"
+webServer.password = "19880108.."
 ```
 ```
-docker run \
+docker run -d \
 --restart=always \
---network host -d \
--v /etc/frp/frpc.ini:/etc/frp/frpc.ini \
---name frpc \
-snowdreamtech/frpc:0.48.0
+--network host \
+-v /etc/frp/frpc.toml:/etc/frp/frpc.toml \
+--name frpc snowdreamtech/frpc
+```
+##frpc配置
+```
+[[proxies]]
+name = "web01"
+type = "http"
+localIP = "127.0.0.1"
+localPort = 5700
+remotePort = 80
+customDomains = ["域名"]
+
+[[proxies]]
+name = "web02"
+type = "http"
+localIP = "127.0.0..1"
+localPort = 9000
+remotePort = 80
+customDomains = ["域名"]
+
+[[proxies]]
+name = "web1"
+type = "https"
+localIP = "127.0.0.1"
+localPort = 8006
+remotePort = 5001
+customDomains = [" 域名"]
 ```
 
 ## linux上使用rclone挂载onedrive或googledrive并设置开机自启
