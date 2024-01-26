@@ -1110,7 +1110,7 @@ iptables-save
 安装iptables-persistent
 ```
 apt-get install iptables-persisten
-```t
+```
 保存规则持续生效
 ```
 netfilter-persistent save
