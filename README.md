@@ -1044,3 +1044,97 @@ apt-get update && apt-get install vim -y
 2、如果使用exit退出，那么在退出之后会关闭容器，可以使用下面的流程进行恢复
 使用docker restart命令重启容器
 使用docker attach命令进入容器
+
+## centos查看端口占用情况的方法
+centos中查看端口占用情况的方法：1、打开centos终端；2、输入“netstat -tlunp”命令查看端口占用情况即可。
+具体操作步骤：
+
+1、在centos系统桌面中使用快捷键【Ctrl+Alt+T】打开终端命令行模式。
+
+2、在centos终端命令行中输入以下命令查看端口占用情况即可。
+
+netstat -tlunp #查看端口占用情况
+
+相关命令：
+
+netstat -tunlp |grep 端口号 #查看指定端口信息
+
+#可通过kill命令强行杀掉占用端口的进程
+
+kill -9 123 #123是进程PID，此命令可杀掉PID为123的端口进程
+
+## centos 开放指定端口
+firewall-cmd --zone=public --add-port=端口号/tcp --permanent
+开启指定端口后必须重启防火墙，重启命令
+```
+systemctl restart firewalld.service
+```
+查看防火墙状态
+```
+systemctl status firewalld.service
+```
+开启防火墙
+```
+systemctl start firewalld.service
+```
+禁止开机启动
+```
+systemctl disable firewalld.service
+```
+开启开机启动
+```
+systemctl enable firewalld.service
+```
+查看已开放端口
+```
+firewall-cmd --list-ports
+```
+
+## Debian/Ubuntu  放行端口
+安装iptables（通常系统都会自带，如果没有就需要安装）
+```
+apt-get update
+```
+```
+apt-get install iptables
+```
+例如要放行8888端口
+```
+iptables -I INPUT -p tcp --dport 8888 -j ACCEPT
+```
+然后保存放行规则
+```
+iptables-save
+```
+设置完就已经放行了指定的端口，但重启后会失效，下面设置持续生效规则；
+安装iptables-persistent
+```
+apt-get install iptables-persisten
+```t
+保存规则持续生效
+```
+netfilter-persistent save
+```
+```
+netfilter-persistent reload
+```
+设置完成后指定端口就会持续放行了；
+
+Centos  放行端口
+例如要放行8888端口
+```
+firewall-cmd --zone=public --add-port=8888/tcp --permanent
+```
+命令含义：
+
+--zone                      #作用域
+--add-port=80/tcp  #添加端口，格式为：端口/通讯协议
+--permanent           #永久生效，没有此参数重启后失效
+然后重启防火墙
+```
+firewall-cmd --reload
+```
+查看防火墙规则
+```
+iptables -L
+```
