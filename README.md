@@ -3,9 +3,9 @@
 ## 网页导航
 ```
 docker run -d --restart=always -p 2024:3002 \
--v ~/root/sun-panel/conf:/app/conf \
--v ~/root/sun-panel/uploads:/app/uploads \
--v ~/root/sun-panel/database:/app/database \
+-v /root/sun-panel/conf:/app/conf \
+-v /root/sun-panel/uploads:/app/uploads \
+-v /root/sun-panel/database:/app/database \
 --name sun-panel \
 hslr/sun-panel
 ```
