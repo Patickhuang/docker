@@ -19,7 +19,7 @@ docker run -d -p 9898:4567 -p 5344:80 -e ALIST_PORT=5344 -v /etc/xiaoya:/data --
 ```
 ## 密码管理器
 ```
-docker run -d --name bitwarden --restart always -v /root/Bitwarden:/data/ -p 1668:80 bitwarden/self-host:dev
+docker run -d --name Bitwarden -v /root/Bitwarden:/data/ -p 1668:80 vaultwarden/server:latest
 ```
 
 ## Portainer CE安装
