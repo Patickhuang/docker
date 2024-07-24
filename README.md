@@ -13,6 +13,14 @@ luolongfei/freenom
 ```
 docker run -d --name freenom --restart always -v $(pwd):/conf -v $(pwd)/logs:/app/logs -e RUN_AT="0 12 * * *" \ luolongfei/freenom
 ```
+## 小雅
+```
+docker run -d -p 9898:4567 -p 5344:80 -e ALIST_PORT=5344 -v /etc/xiaoya:/data --restart=always --name=xiaoya-tvbox haroldli/xiaoya-tvbox:latest
+```
+## 密码管理器
+```
+docker run -d --name bitwarden --restart always -v /root/Bitwarden:/data/ -p 1668:80 bitwarden/self-host:dev
+```
 
 ## Portainer CE安装
 ```
