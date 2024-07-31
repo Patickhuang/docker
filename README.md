@@ -360,6 +360,18 @@ docker run -dit \
   -p 12580:8765 \
 shufflewzc/autoupdateck:latest
 ```
+## 无界
+```
+docker run -dit \
+ -v /root/BncrData:/bncr/BncrData \
+ -p 9098:9090 \
+ --name bncr \
+ --hostname bncr \
+ --restart on-failure:5 \
+ --log-opt max-size=5m \
+ --log-opt max-file=3 \
+anmour/bncr && docker attach bncr
+```
 
 ## 安装docker-compose
 
