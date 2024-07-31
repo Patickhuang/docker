@@ -351,6 +351,16 @@ docker run -d -it --name="gocq" -v $PWD/go-cqhttp:/data yanxsir/go-cqhttp:latest
 ```
 更换镜像：jyishit/go-cqhttp:latest
 
+## 账号密码登录
+```
+docker run -dit \
+  --name autoupdateck \
+  --restart always \
+  --hostname autoupdateck \
+  -p 12580:8765 \
+shufflewzc/autoupdateck:latest
+```
+
 ## 安装docker-compose
 
 #国外鸡
