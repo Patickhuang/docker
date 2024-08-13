@@ -351,7 +351,7 @@ docker run -d -it --name="gocq" -v $PWD/go-cqhttp:/data yanxsir/go-cqhttp:latest
 ```
 更换镜像：jyishit/go-cqhttp:latest
 
-## 账号密码登录
+## 账号密码登录AMD/ARM
 ```
 docker run -dit \
   --name autoupdateck \
@@ -359,6 +359,15 @@ docker run -dit \
   --hostname autoupdateck \
   -p 12580:8765 \
 shufflewzc/autoupdateck:latest
+```
+```
+docker run -dit \
+ --name autoupdateck \
+ --restart always \
+ -e TZ=Asia/Shanghai \
+ --hostname autoupdateck \
+ -p 12580:8765 \
+windyday/windyday:arm64
 ```
 ## 无界
 ```
