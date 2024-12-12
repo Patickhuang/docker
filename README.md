@@ -1177,3 +1177,39 @@ firewall-cmd --reload
 ```
 iptables -L
 ```
+
+##新版哪吒反代NginxProxyManage配置
+```
+underscores_in_headers on;
+ignore_invalid_headers off;
+
+location /dashboard {
+    proxy_pass http://$server:$port;
+    proxy_set_header Host $http_host;
+    proxy_set_header      Upgrade $http_upgrade;
+}
+# websocket 相关
+location ~* ^/api/v1/ws/(server|terminal|file)(.*)$ {
+    proxy_set_header Host $host;
+    proxy_set_header nz-realip $remote_addr;
+    proxy_set_header Origin https://$host;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+    proxy_read_timeout 3600s;
+    proxy_send_timeout 3600s;
+    proxy_pass http://$server:$port;
+}
+# grpc 相关    
+location ^~ /proto.NezhaService/ {
+    grpc_set_header Host $host;
+    grpc_set_header nz-realip $remote_addr;
+    grpc_set_header client_secret $http_client_secret;
+    grpc_set_header client_uuid $http_client_uuid;
+    grpc_read_timeout 600s;
+    grpc_send_timeout 600s;
+    grpc_socket_keepalive on;
+    client_max_body_size 10m;
+    grpc_buffer_size 4m;
+    grpc_pass grpc://$server:$port;
+}
+```
