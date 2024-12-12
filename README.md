@@ -1178,7 +1178,7 @@ firewall-cmd --reload
 iptables -L
 ```
 
-##新版哪吒反代NginxProxyManage配置
+## 新版哪吒反代NginxProxyManage配置
 ```
 underscores_in_headers on;
 ignore_invalid_headers off;
